@@ -53,9 +53,17 @@ services:
           memory: 512M
           cpus: "0.5"
 
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    networks:
+      - load_balancer_net
+    profiles:
+      - ssl # Only run when explicitly requested
+
 networks:
   load_balancer_net:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
