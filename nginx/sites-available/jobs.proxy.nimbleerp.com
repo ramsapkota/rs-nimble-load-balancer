@@ -1,8 +1,8 @@
 # Backend servers with sticky sessions
 upstream mvc_backend {
     ip_hash;
-    server backend.internal.nimbleteco.com:443 max_fails=3 fail_timeout=30s;
-    server deploy.internal.nimbleteco.com:443 max_fails=3 fail_timeout=30s backup;
+    server backend.internal.nimbleteco.com:443 ;
+    server deploy.internal.nimbleteco.com:443 ;
     keepalive 32;
 }
 
