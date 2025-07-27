@@ -1,0 +1,49 @@
+# Runtime data and logs
+nginx/logs/
+redis/data/
+certbot/
+
+# SSL certificates and private keys
+*.key
+*.crt
+*.pem
+nginx/ssl/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+
+# Docker volumes data
+volumes/
+
+# Keep structure but ignore content
+nginx/logs/*
+!nginx/logs/.gitkeep
+redis/data/*
+!redis/data/.gitkeep
