@@ -11,10 +11,13 @@ DOMAIN_NAME=$1
 EMAIL_ADDRESS=$2
 WEBROOT_PATH=$3
 
+# Change to parent directory where docker-compose.yml is located
+cd "$(dirname "$0")/.."
+
 # Run the Docker command to generate SSL certificate
 docker compose -f docker-compose.yml run --rm certbot certonly \
     --webroot --webroot-path="$WEBROOT_PATH" \
-    --email "$EMAIL_ADDRESS"  --agree-tos --no-eff-email \
+    --email "$EMAIL_ADDRESS" --agree-tos --no-eff-email \
     -d "$DOMAIN_NAME"
 
 # Check if the command was successful
