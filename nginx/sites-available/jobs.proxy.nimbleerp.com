@@ -25,7 +25,6 @@ server {
 # HTTPS server
 server {
     listen 443 ssl;
-    http2 on;
     server_name jobs.proxy.nimbleerp.com;
 
     # SSL configuration
